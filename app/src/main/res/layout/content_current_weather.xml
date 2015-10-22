@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                tools:context=".CurrentWeatherActivity"
+                tools:showIn="@layout/activity_current_weather"
+                android:background="#f2a43d"
+                android:gravity="center">
+
+
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.erikmafo.weatherapp.LocationFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout="@layout/fragment_location"/>
+
+
+    <ImageView
+        android:id="@+id/iconImage"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitCenter"
+
+
+        android:layout_below="@id/locationFragment"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/clear_day"/>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iconImage"
+        android:orientation="horizontal"
+        android:weightSum="6">
+
+        <TextView
+            android:id="@+id/temperature"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="100"
+            android:textSize="60sp"/>
+
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:weightSum="2"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="Chance of Rain"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="Feels Like"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:weightSum="2"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/precipProbability"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="20%"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/apparentTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="40"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+    <TextView
+        android:id="@+id/dailySummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Daily Summary"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="update"/>
+
+
+
+</RelativeLayout>
