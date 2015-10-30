@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.1"
 
     Properties props = new Properties()
-    props.load(new FileInputStream(file(project.rootProject.file("gradle.properties"))))
+    props.load(new FileInputStream(file(project.rootProject.file("local.properties"))))
 
     defaultConfig {
         applicationId "com.erikmafo.weatherapp"
